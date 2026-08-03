@@ -14,12 +14,12 @@ function processFiles(dir) {
             let content = fs.readFileSync(fp, 'utf8');
             let original = content;
             
-            // Replace the CA with "0x959d43eef0af6af73c7ae2791716a7146c4c69c2"
+            // Replace "0x959d43eef0af6af73c7ae2791716a7146c4c69c2" with the real CA
             content = content.replace(/0x959d43eef0af6af73c7ae2791716a7146c4c69c2/gi, '0x959d43eef0af6af73c7ae2791716a7146c4c69c2');
             
             if (content !== original) {
                 fs.writeFileSync(fp, content);
-                console.log('Replaced CA with 0x959d43eef0af6af73c7ae2791716a7146c4c69c2 in', fp);
+                console.log('Injected CA in', fp);
             }
         }
     }
